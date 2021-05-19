@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rating Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Ratings</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Product</th>
+         <th>Name</th>
+         <th>Price</th>
+         <th>Rating</th>
+      </tr>
+         {% for rating in ratings %}
+      <tr>
+          <td>{{rating['Product']}}</td>
+          <td>{{rating['Name']}}</td>
+          <td>{{rating['Price']}}</td>
+          <td>{{rating['Rating']}}</td>
+       {% endfor %}
+   </table>
+</div>
+
+</body>
+
+</html>
